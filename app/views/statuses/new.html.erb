@@ -1,0 +1,27 @@
+<h1>New status</h1>
+
+<% form_for(@status) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :done %><br />
+    <%= f.text_field :done %>
+  </p>
+  <p>
+    <%= f.label :did %><br />
+    <%= f.text_field :did %>
+  </p>
+  <p>
+    <%= f.label :completed %><br />
+    <%= f.check_box :completed %>
+  </p>
+  <p>
+    <%= f.label :completed_at %><br />
+    <%= f.datetime_select :completed_at %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', statuses_path %>

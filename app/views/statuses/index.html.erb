@@ -1,0 +1,26 @@
+<h1>Listing statuses</h1>
+
+<table>
+  <tr>
+    <th>Done</th>
+    <th>Did</th>
+    <th>Completed</th>
+    <th>Completed at</th>
+  </tr>
+
+<% @statuses.each do |status| %>
+  <tr>
+    <td><%=h status.done %></td>
+    <td><%=h status.did %></td>
+    <td><%=h status.completed %></td>
+    <td><%=h status.completed_at %></td>
+    <td><%= link_to 'Show', status %></td>
+    <td><%= link_to 'Edit', edit_status_path(status) %></td>
+    <td><%= link_to 'Destroy', status, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New status', new_status_path %>
